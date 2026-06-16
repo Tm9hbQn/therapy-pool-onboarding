@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import './index.css'
 
 export default function App() {
@@ -71,7 +71,7 @@ export default function App() {
     <div className="app-container" dir="rtl">
       
       {/* Screen 1: Hook */}
-      <div className="screen water-bg" ref={el => screensRef.current[0] = el}>
+      <div className="screen water-bg" ref={el => { screensRef.current[0] = el }}>
         <div className="glass-panel">
           <h1 className="title">ברוכים הבאים</h1>
           <p className="subtitle">הצוות הקליני שלנו מוכן להתחיל את המסע של שירה במים.</p>
@@ -87,7 +87,7 @@ export default function App() {
       </div>
 
       {/* Screen 2: Goal */}
-      <div className="screen" ref={el => screensRef.current[1] = el}>
+      <div className="screen" ref={el => { screensRef.current[1] = el }}>
         <div className="glass-panel">
           <h2 className="title">כדי שנוכל להתאים לשירה את המרחב המדויק ביותר, מה המיקוד העיקרי שלנו?</h2>
           <div className="card-grid">
@@ -108,7 +108,7 @@ export default function App() {
       </div>
 
       {/* Screen 3: Safety */}
-      <div className="screen" ref={el => screensRef.current[2] = el}>
+      <div className="screen" ref={el => { screensRef.current[2] = el }}>
         <div className="glass-panel">
           <h2 className="title">הבטיחות של שירה קודמת לכול</h2>
           <p className="subtitle">אנא אשרו את הפרטים הבאים:</p>
@@ -138,7 +138,7 @@ export default function App() {
       </div>
 
       {/* Screen 4: Prep */}
-      <div className="screen" ref={el => screensRef.current[3] = el}>
+      <div className="screen" ref={el => { screensRef.current[3] = el }}>
         <div className="glass-panel">
           <h2 className="title">מה אורזים למפגש הראשון?</h2>
           <div style={{textAlign: 'right', marginBottom: '2rem'}}>
@@ -158,7 +158,7 @@ export default function App() {
       </div>
 
       {/* Screen 5: Contract */}
-      <div className="screen" ref={el => screensRef.current[4] = el}>
+      <div className="screen" ref={el => { screensRef.current[4] = el }}>
         <div className="glass-panel">
           <h2 className="title">הזמן והמרחב שלכם</h2>
           <p className="subtitle">אנחנו משריינים את הבריכה ואת המטפל.ת במיוחד עבור שירה. ביטול יתאפשר עד 24 שעות לפני המפגש.</p>
@@ -186,7 +186,7 @@ export default function App() {
       </div>
 
       {/* Screen 6: Upload */}
-      <div className="screen" ref={el => screensRef.current[5] = el}>
+      <div className="screen" ref={el => { screensRef.current[5] = el }}>
         <div className="glass-panel">
           <h2 className="title">שלב אחרון לפני המים</h2>
           <p className="subtitle">העלו לכאן צילום של הפניית הרופא וטופס 17.</p>
@@ -207,7 +207,7 @@ export default function App() {
       </div>
 
       {/* Screen 7: Calendar / Success */}
-      <div className={`screen ${appointment ? 'success-screen' : ''}`} ref={el => screensRef.current[6] = el}>
+      <div className={`screen ${appointment ? 'success-screen' : ''}`} ref={el => { screensRef.current[6] = el }}>
         <div className="glass-panel">
           {!appointment ? (
             <>
